@@ -1,5 +1,8 @@
 import sys
 from PIL import Image
+import pillow_heif
+
+pillow_heif.register_heif_opener()
 
 def convert_image_to_pdf(image_path):
     try:
@@ -17,3 +20,4 @@ if __name__ == "__main__":
     else:
         for image_file in sys.argv[1:]:
             convert_image_to_pdf(image_file)
+
